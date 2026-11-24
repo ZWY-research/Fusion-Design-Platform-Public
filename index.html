@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Open literature and design reference data for SPARC.">
+  <link rel="icon" href="data:,">
+  <title>Fusion Design Platform | Public Scientific Reference Preview</title>
+  <style>
+    :root { color-scheme: light; --paper: #fff; --ink: #122835; --muted: #425865; --line: #d6e1e5; --accent: #126575; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #f2f6f7; color: var(--ink); font: 1rem/1.6 system-ui, sans-serif; }
+    .wrap { width: min(68rem, calc(100% - 3rem)); margin-inline: auto; }
+    header { color: #fff; background: #0d2d3a; border-bottom: .3rem solid #4aa6a5; }
+    header .wrap { padding-block: 3.2rem 2rem; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { font-size: clamp(2rem, 5.4vw, 3.8rem); line-height: 1.08; letter-spacing: -.042em; margin-bottom: .6rem; }
+    .subtitle { font-size: clamp(1.1rem, 2.5vw, 1.45rem); color: #bfe5e2; margin-bottom: .6rem; }
+    .intro { color: #e0ebef; margin-bottom: 1.4rem; }
+    nav { display: flex; flex-wrap: wrap; gap: .45rem 1.3rem; }
+    a { color: var(--accent); text-underline-offset: .2em; }
+    a:hover { text-decoration-thickness: .13em; }
+    a:focus-visible { outline: .18rem solid #d18b2f; outline-offset: .2rem; }
+    nav a { color: #f0faf9; }
+    main { display: grid; gap: 1.2rem; padding-block: 1.5rem 2.5rem; }
+    section { min-width: 0; border: 1px solid var(--line); border-radius: .5rem; background: var(--paper); padding: clamp(1rem, 3vw, 2rem); }
+    h2 { font-size: clamp(1.3rem, 3vw, 1.85rem); line-height: 1.25; margin-bottom: .55rem; }
+    h3 { font-size: 1.02rem; margin-bottom: .08rem; }
+    .case { color: var(--accent); font-size: .85em; margin-right: .4rem; }
+    .note, .sources, footer { color: var(--muted); }
+    .sources { margin: .7rem 0 0; font-size: .94rem; }
+    .metrics { margin: 1rem 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border: 1px solid var(--line); background: #f6f9fa; }
+    .metrics div { padding: .6rem .75rem; border-inline-end: 1px solid var(--line); }
+    .metrics div:last-child { border-inline-end: 0; }
+    dt { font-size: .83rem; color: var(--muted); }
+    dd { margin: .12rem 0 0; font-variant-numeric: tabular-nums; font-size: 1.15rem; font-weight: 650; }
+    code { overflow-wrap: anywhere; color: var(--ink); }
+    .files { list-style: none; margin: .7rem 0; padding: 0; border-block-start: 1px solid var(--line); }
+    .files li { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: .35rem 1rem; padding-block: .65rem; border-block-end: 1px solid var(--line); }
+    .files p { margin: 0; color: var(--muted); font-size: .92rem; }
+    .file-links { display: flex; flex-wrap: wrap; gap: .3rem 1rem; }
+    footer { border-block-start: 1px solid var(--line); padding-block: 1rem 1.7rem; font-size: .9rem; }
+    footer p { margin-bottom: 0; }
+    @media (max-width: 39rem) {
+      .wrap { width: calc(100% - 1.5rem); }
+      header .wrap { padding-block: 1.8rem 1.35rem; }
+      .metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .metrics div:nth-child(2) { border-inline-end: 0; }
+      .metrics div:nth-child(-n+2) { border-block-end: 1px solid var(--line); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <h1>Fusion Design Platform</h1>
+      <p class="subtitle">Public Scientific Reference Preview</p>
+      <p class="intro">Published SPARC design parameters, modeling references, and original reference files.</p>
+      <nav aria-label="Reference cases">
+        <a href="#v2">SPARC V2</a>
+        <a href="#popcon">cfspopcon PRD</a>
+        <a href="#sparcpublic">SPARCPublic PRD</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="v2" aria-labelledby="v2-title">
+      <h2 id="v2-title"><span class="case">A1</span> SPARC V2 design reference</h2>
+      <p class="note">The 2020 SPARC V2 design specifies a compact, high-field deuterium–tritium tokamak. The values below describe its nominal design.</p>
+      <dl class="metrics">
+        <div><dt>Major radius <i>R</i><sub>0</sub></dt><dd>1.85 m</dd></div>
+        <div><dt>Minor radius <i>a</i></dt><dd>0.57 m</dd></div>
+        <div><dt>On-axis toroidal field <i>B</i><sub>0</sub></dt><dd>12.2 T</dd></div>
+        <div><dt>Plasma current <i>I</i><sub>p</sub></dt><dd>8.7 MA</dd></div>
+      </dl>
+      <p>For the nominal full-field H-mode case with <i>H</i><sub>98,y2</sub> = 1, the design study projects about 140 MW of total fusion power and a dimensionless plasma fusion gain <i>Q</i> of about 11. These are model predictions for the reference discharge.</p>
+      <p class="sources">Design and projections · A. J. Creely et al. (2020), <cite>Overview of the SPARC tokamak</cite>. <a href="https://doi.org/10.1017/S0022377820001257">DOI 10.1017/S0022377820001257</a></p>
+      <p class="sources">Core-plasma modeling · P. Rodriguez-Fernandez et al. (2020), <cite>Predictions of core plasma performance for the SPARC tokamak</cite>. <a href="https://doi.org/10.1017/S0022377820001075">DOI 10.1017/S0022377820001075</a></p>
+    </section>
+
+    <section id="popcon" aria-labelledby="popcon-title">
+      <h2 id="popcon-title"><span class="case">A2</span> cfspopcon Primary Reference Discharge</h2>
+      <p>Commonwealth Fusion Systems publishes cfspopcon for evaluating plasma operating contours. Its Primary Reference Discharge example specifies a linear grid of 40 volume-averaged electron densities (input units of 10<sup>19</sup> m<sup>−3</sup>) and 30 volume-averaged electron temperatures (keV). Fixed input values include a 1.85 m major radius, a 12.2 T on-axis toroidal field and an 8.7 MA plasma current. The upstream documentation describes changes from the 2020 physics basis.</p>
+      <p class="note">Software version <strong>9.0.1</strong> · fixed revision <code>0ebfb43c614c71b0c6946209b826cfc19da6a0e8</code> · <a href="https://github.com/cfs-energy/cfspopcon/blob/0ebfb43c614c71b0c6946209b826cfc19da6a0e8/LICENSE">MIT software license</a>.</p>
+      <ul>
+        <li><a href="https://github.com/cfs-energy/cfspopcon/tree/0ebfb43c614c71b0c6946209b826cfc19da6a0e8/example_cases/SPARC_PRD">Upstream PRD example</a> and <a href="https://github.com/cfs-energy/cfspopcon/blob/0ebfb43c614c71b0c6946209b826cfc19da6a0e8/example_cases/SPARC_PRD/input.yaml">original input parameters</a></li>
+        <li><a href="https://cfspopcon.readthedocs.io/en/stable/doc_sources/getting_started.html">Upstream POPCON guide</a> and <a href="https://github.com/cfs-energy/cfspopcon/blob/0ebfb43c614c71b0c6946209b826cfc19da6a0e8/tests/regression_results/SPARC_PRD_result.nc">upstream NetCDF regression fixture</a> (external link)</li>
+      </ul>
+      <p class="sources">Physics background · <a href="https://doi.org/10.1017/S0022377820001257">Creely et al. (2020)</a>. Cite the <a href="https://github.com/cfs-energy/cfspopcon/tree/0ebfb43c614c71b0c6946209b826cfc19da6a0e8">fixed cfspopcon repository</a> for the software version and example.</p>
+    </section>
+
+    <section id="sparcpublic" aria-labelledby="sparcpublic-title">
+      <h2 id="sparcpublic-title"><span class="case">A3</span> SPARCPublic reference files</h2>
+      <p>Commonwealth Fusion Systems publishes the 2022-10-13 Primary Reference Discharge as design reference data. The files below are unchanged original bytes. The equilibrium and kinetic profile files describe design models.</p>
+      <ul class="files">
+          <li><div><h3>FreeGS GEQDSK</h3><p>Double-null reference equilibrium with a simplified first wall. 301,719 bytes.</p></div><div class="file-links"><a download href="data/SPARCPublic/PrimaryReferenceDischarge/2%20-%20SPARC_DN_PRD_freegs_20221013">Download FreeGS GEQDSK</a><a href="https://github.com/cfs-energy/SPARCPublic/blob/5b913b8216d05346b22e2e1e87c2ff100761613f/PrimaryReferenceDischarge/2%20-%20SPARC_DN_PRD_freegs_20221013">Upstream file</a></div></li>
+          <li><div><h3>TRANSP</h3><p>One-dimensional reference kinetic profiles. 11,593 bytes.</p></div><div class="file-links"><a download href="data/SPARCPublic/PrimaryReferenceDischarge/5%20-%20transp_20221013.txt">Download TRANSP</a><a href="https://github.com/cfs-energy/SPARCPublic/blob/5b913b8216d05346b22e2e1e87c2ff100761613f/PrimaryReferenceDischarge/5%20-%20transp_20221013.txt">Upstream file</a></div></li>
+          <li><div><h3>CGYRO</h3><p>One-dimensional kinetic profiles from a separate modeling workflow. 22,993 bytes.</p></div><div class="file-links"><a download href="data/SPARCPublic/PrimaryReferenceDischarge/6%20-%20cgyro_20221013.txt">Download CGYRO</a><a href="https://github.com/cfs-energy/SPARCPublic/blob/5b913b8216d05346b22e2e1e87c2ff100761613f/PrimaryReferenceDischarge/6%20-%20cgyro_20221013.txt">Upstream file</a></div></li>
+      </ul>
+      <p class="sources">The kinetic profile files report electron and ion temperatures in keV and electron density in 10<sup>19</sup> m<sup>−3</sup>. No fields or units have been transformed.</p>
+      <p class="sources">Data citation · Commonwealth Fusion Systems, <cite>SPARCPublic – Primary Reference Discharge</cite>, snapshot 2022-10-13, revision <code>5b913b8216d05346b22e2e1e87c2ff100761613f</code>. <a href="https://github.com/cfs-energy/SPARCPublic/tree/5b913b8216d05346b22e2e1e87c2ff100761613f/PrimaryReferenceDischarge">Fixed upstream dataset</a> · <a href="https://github.com/cfs-energy/SPARCPublic/blob/5b913b8216d05346b22e2e1e87c2ff100761613f/README.md">upstream descriptions</a> · <a href="data/SPARCPublic/LICENSE">original MIT license and attribution</a>.</p>
+      <p class="sources">TRANSP modeling context · <a href="https://doi.org/10.1017/S0022377820001075">Rodriguez-Fernandez et al. (2020)</a>. CGYRO study · <a href="https://doi.org/10.1088/1741-4326/ac64b2">Rodriguez-Fernandez, Howard and Candy (2022)</a>. Cite the pinned dataset for the files themselves.</p>
+      <p class="sources">Copyright 2020 CFS (upstream README). The information, data, or work presented herein builds on the SPARC primary reference discharge and X-point target discharge data provided by Commonwealth Fusion Systems.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>Independent static reference preview. No software execution is provided. No CFS endorsement is implied.</p>
+    </div>
+  </footer>
+</body>
+</html>
