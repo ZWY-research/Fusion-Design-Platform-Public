@@ -1,0 +1,11 @@
+Fusion Design Platform — Interactive Digital Twin Preview
+Copyright (c) 2026 ZWY-research. All rights reserved where held, except where expressly granted.
+
+This release makes the display source, parameterized geometry, independent optical design and selected simulation outputs publicly viewable. No project-wide open-source license is granted.
+Previously granted permissions remain governed by their original terms.
+
+A1 tables are selected outputs from this project’s reduced model. Published SPARC facts belong to their cited sources.
+A2 grids and sensitivity summaries contain system-level operating-point scalars from project-run reproductions of cfspopcon 9.0.1. They do not contain OPEN-ADAS files, atomic data, processed cooling tables, NetCDF or upstream fixtures. OPEN-ADAS: https://open.adas.ac.uk/terms-and-conditions
+A3 reference data and derivatives retain CFS SPARCPublic MIT attribution at revision 5b913b8216d05346b22e2e1e87c2ff100761613f. Project-derived fields and synthetic diagnostics have their own provenance. No paper figures or publisher text are included.
+
+See THIRD_PARTY_NOTICES.txt and data/SPARCPublic/LICENSE for applicable third-party terms.

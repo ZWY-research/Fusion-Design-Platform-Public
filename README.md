@@ -1,13 +1,15 @@
 # Fusion Design Platform
 
-Public Scientific Reference Preview is an independent, static guide to published SPARC design references. The site links to the literature and upstream sources and preserves the original bytes of three reference data files. This repository contains the preview and its reference files. The research software is maintained separately.
+**[Launch Interactive Digital Twin](https://zwy-research.github.io/Fusion-Design-Platform-Public/)**
 
-- **SPARC V2 (2020).** Design parameters and projections from [Creely et al.](https://doi.org/10.1017/S0022377820001257). See [Rodriguez-Fernandez et al.](https://doi.org/10.1017/S0022377820001075) for core-plasma modeling. The site presents numerical facts with attribution.
-- **cfspopcon 9.0.1.** [Commonwealth Fusion Systems’ PRD example](https://github.com/cfs-energy/cfspopcon/tree/0ebfb43c614c71b0c6946209b826cfc19da6a0e8/example_cases/SPARC_PRD), [upstream regression fixture](https://github.com/cfs-energy/cfspopcon/blob/0ebfb43c614c71b0c6946209b826cfc19da6a0e8/tests/regression_results/SPARC_PRD_result.nc), and [software MIT license](https://github.com/cfs-energy/cfspopcon/blob/0ebfb43c614c71b0c6946209b826cfc19da6a0e8/LICENSE). These are external references.
-- **SPARCPublic PRD, 2022-10-13.** [Commonwealth Fusion Systems’ fixed upstream dataset](https://github.com/cfs-energy/SPARCPublic/tree/5b913b8216d05346b22e2e1e87c2ff100761613f/PrimaryReferenceDischarge). The original FreeGS GEQDSK, TRANSP, and CGYRO files are in [data/SPARCPublic/PrimaryReferenceDischarge](data/SPARCPublic/PrimaryReferenceDischarge). See [Rodriguez-Fernandez, Howard and Candy (2022)](https://doi.org/10.1088/1741-4326/ac64b2) for the CGYRO study. The [upstream MIT license and attribution](data/SPARCPublic/LICENSE) accompany those files.
+Interactive fusion research demonstration based on published SPARC reference cases, with three-dimensional visualization and precomputed Thomson scattering diagnostics.
 
-SPARCPublic data acknowledgement (Copyright 2020 CFS)
+- **Physics** · SPARC V2 reduced operating space, cfspopcon PRD operating contours and the SPARCPublic double-null magnetic equilibrium and fields.
+- **Device** · Parameterized SPARC-based research reconstruction with a shared physical cross-section and auxiliary systems.
+- **Diagnostics** · An independent optical design with three windows and fixed synthetic spectra, six-channel signals and inference statistics.
 
-> The information, data, or work presented herein builds on the SPARC primary reference discharge and X-point target discharge data provided by Commonwealth Fusion Systems.
+This interactive preview uses frozen scientific results. The full research solver is maintained separately. The optical design, geometry and modeled results do not represent experimental measurements, official CFS engineering data or endorsement.
 
-The references concern proposed design and modeled plasma performance. The preview is independent of Commonwealth Fusion Systems.
+[Scientific references and original files](references.html) · [Copyright and data scope](DATA_LICENSE.txt) · [Third-party notices](THIRD_PARTY_NOTICES.txt)
+
+The reviewed display source is in [source](source/). To rebuild the interactive HTML and bundles, run npm ci and npm run build from that directory. The runtime JSON, References page and its original downloads are published alongside the bundles.

@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "configuration": "tokamak",
+  "caseId": "sparc-prd-freegs-20221013",
+  "label": "SPARC PRD · FreeGS 双零平衡（2022-10-13）",
+  "geometry": {"R0": 1.850849231, "a": 0.569860894, "kappa": 1.95484248, "delta": 0.526117893},
+  "engineeringGeometry": "schematic",
+  "geometrySource": "SPARCPublic GEQDSK 边界极值的解析 D 形概略尺寸",
+  "equilibrium": {
+    "asset": "sparc-prd-equilibrium.json",
+    "sourceSha256": "6299e73a1ba1f2b8a1bb6d5e0dfa35f424ec09eebe153c96ea7779420eee85c6"
+  },
+  "resultKind": "CFS SPARCPublic · FreeGS 公开设计参考"
+}

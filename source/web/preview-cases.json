@@ -1,0 +1,35 @@
+[
+  {
+    "caseId": "sparc-v2",
+    "configuration": "tokamak",
+    "label": "SPARC V2 · 2020 文献",
+    "geometry": {"R0": 1.85, "a": 0.57, "kappa": 1.97, "delta": 0.54},
+    "geometrySource": "Creely 等（2020）Table 1 的分离面参考尺寸。截面采用解析形状。",
+    "physical": {"B0": 12.2, "Ip": 8.7},
+    "results": {"P_fusion_MW": 140, "Q_absorbed": 11},
+    "resultKind": "本项目简化扫描 · 文献参考点单列",
+    "sourceIds": ["creely2020", "rodriguez2020"],
+    "research": {
+      "id": "A1",
+      "label": "SPARC V2 简化运行空间",
+      "model": "reduced_v2_screen_v1 · 本项目简化模型",
+      "diagnosticGap": "简化扫描提供温密筛选和参考几何。本案例缺少匹配的 R–Z 平衡、温密空间场与 TS 结果。"
+    }
+  },
+  {
+    "caseId": "sparc-prd",
+    "configuration": "tokamak",
+    "label": "SPARC PRD · cfspopcon 9.0.1",
+    "geometry": {"R0": 1.85, "a": 0.569985, "kappa": 1.96875, "delta": 0.54},
+    "geometrySource": "固定版本 cfspopcon PRD 输入所对应的近似分离面尺寸。",
+    "physical": {"B0": 12.2, "Ip": 8.7},
+    "resultKind": "固定版本官方模型 · 本项目预计算展示",
+    "sourceIds": ["cfspopcon"],
+    "research": {
+      "id": "A2",
+      "label": "cfspopcon 9.0.1 · SPARC PRD POPCON",
+      "model": "cfspopcon 9.0.1 · 原例复现及网格敏感性",
+      "diagnosticGap": "POPCON 给出体积平均量和性能标量。本案例缺少匹配的独立磁平衡和 TS 结果。"
+    }
+  }
+]

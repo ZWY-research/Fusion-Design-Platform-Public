@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="data:,"><meta name="theme-color" content="#101c28"><title>Fusion Design Platform · 三维工作台</title></head>
+<body>
+<header><a class="brand" href="./"><span class="brand-mark">◎</span><span>FUSION <b>DESIGN PLATFORM</b><small>聚变装置设计工作台</small></span></a><nav aria-label="工作台页面"><a href="#physics" data-page-link="physics">物理工况</a><a href="#device" data-page-link="device">装置模型</a><a href="#diagnostics" data-page-link="diagnostics">诊断设计</a></nav><div class="header-right"><span id="workspace-mode">本地科研</span></div></header>
+<div class="case-bar">
+<label for="configuration">装置构型</label><select id="configuration"><option value="tokamak">常规托卡马克</option><option value="st">球形托卡马克 · 尚未实现</option><option value="stellarator">仿星器 · 尚未实现</option><option value="spheromak">球马克 · 尚未实现</option><option value="linear">直线磁约束 · 尚未实现</option><option value="frc">FRC · 尚未实现</option><option value="free">自由探索 · 尚未实现</option></select>
+<label for="case">参考案例</label><select id="case"></select>
+<p id="case-note" class="note" role="status">通用几何初值，不代表任何真实装置。</p>
+</div>
+<main data-page="diagnostics">
+<aside class="setup-panel" aria-label="工况与装置参数">
+<fieldset id="parameters"><legend>几何参数 <span>SI / m</span></legend><div id="parameter-inputs"></div><p id="validation" role="alert"></p><button id="reset" class="secondary">恢复几何初值</button></fieldset>
+<fieldset id="target-editor"></fieldset><fieldset id="layers"><legend>结构图层 <span>简化示意</span></legend><select id="device-component" aria-label="选择装置组件"><option value="">选择组件查看属性</option></select></fieldset>
+<div class="model-note"><strong>几何与来源</strong><p id="device-model-note">等离子体边界采用解析 D 形包络。线圈及真空室为参数化外观示意。</p></div>
+</aside>
+<aside class="diagnostic-panel" aria-label="诊断对象树">
+  <details id="diagnostic-tree" open><summary>诊断系统</summary><ul class="diagnostic-list"><li><strong>汤姆逊散射</strong><span id="ts-state">TS</span></li><li>干涉仪 <span>未加入</span></li><li>磁诊断 <span>未加入</span></li></ul>
+  <div id="diagnostic-controls"><p class="note" id="diagnostic-empty">选择 SPARC PRD FreeGS 参考工况以使用诊断工作台。</p></div></details>
+  <details class="plasma-controls" open><summary>等离子体视图</summary>
+    <label for="scene-quantity">截面色标</label><select id="scene-quantity"><option value="0">电子温度 Te · keV</option><option value="1">电子密度 ne · 10¹⁹ m⁻³</option></select>
+    <label><input type="checkbox" id="scene-vessel" checked> 真空室</label>
+    <label><input type="checkbox" id="scene-flux" checked> 磁通面</label><label><input type="checkbox" id="scene-motion" checked> 可视化粒子</label>
+  </details>
+</aside>
+<div class="viewport" id="viewport"><div class="view-heading"><h1 id="view-title">轴对称托卡马克</h1><span id="view-status" class="status">几何预览</span></div>
+<div class="view-toolbar" role="group" aria-label="视角控制"><button data-view="iso" title="重置视角">等轴</button><button data-view="front">正视</button><button data-view="top">俯视</button><button id="cutaway" aria-pressed="true">剖开展示</button><div id="device-modes" role="group" aria-label="装置展示模式" hidden><button type="button" data-device-mode="outside" aria-pressed="true">完整外观</button><button type="button" data-device-mode="inside" aria-pressed="false">内部展示</button></div></div>
+<section id="device-drawer" class="device-drawer" aria-label="装置组件属性" hidden>
+  <div class="ts03-heading"><h3 id="device-title"></h3><button type="button" id="device-close">关闭</button></div>
+  <p id="device-note"></p>
+  <dl><div><dt>所属系统</dt><dd id="device-system"></dd></div><div><dt>验证等级</dt><dd id="device-validation"></dd></div><div><dt>包围尺寸 X × Y × Z（m）</dt><dd id="device-size"></dd></div><div><dt>高度范围 Z（m）</dt><dd id="device-z"></dd></div></dl>
+  <dl id="device-parameters" hidden></dl>
+  <a id="device-source" target="_blank" rel="noopener" hidden>查看公开参考来源</a>
+  <button type="button" id="device-visibility"></button>
+</section>
+<div id="unavailable" hidden role="status"></div><div id="scene-callouts" aria-hidden="true"></div><div class="view-bottom"><span>旋转 · 缩放 · 平移</span><span>右手系 · Z-up · m</span></div><div id="scene-legend" hidden></div></div>
+<aside id="ts-inspector" class="inspector" aria-label="诊断属性与计算结果"><h2>属性与计算结果</h2><p id="inspector-empty" class="note">选择一个器件或散射点查看属性。</p></aside>
+<section class="results" aria-label="科学结果"><div class="results-title"><h2>科学结果</h2><span id="science-status" class="badge muted">未接入物理求解器</span></div>
+<div class="physics-dashboard"><h1>物理工况</h1></div>
+<div id="design-workspace"></div><div id="science-data" aria-live="polite"></div>
+<details id="diagnostic-charts" open hidden><summary>诊断图表</summary><div id="diagnostic-plot"></div></details>
+<div class="metrics"><article><span>聚变功率 P<sub>fus</sub></span><strong>— <small>MW</small></strong><p>尚未计算</p></article><article><span>聚变增益 Q</span><strong>—</strong><p>尚未计算</p></article><article><span>能量约束时间 τ<sub>E</sub></span><strong>— <small>s</small></strong><p>尚未计算</p></article><article><span>物理可行性</span><strong class="text-value">未验证</strong><p>几何预览不构成物理结论</p></article></div><p class="result-note">此自定义工况尚未计算。参考案例和候选展示已核验的离线结果。</p></section>
+</main><footer style="padding:16px 24px;font-size:11px;color:#91a4b6">独立科研工作台 · SPARC V2 尚未完整复现 · 参数化研究几何 · <a style="color:#7bd3bb" href="./THIRD_PARTY_NOTICES.txt" target="_blank" rel="noopener">第三方声明</a> · <a style="color:#7bd3bb" href="./DATA_LICENSE.txt" target="_blank" rel="noopener">版权与数据范围</a></footer><script type="module" src="/main.js"></script>
+</body></html>
+
+
+
+
+
